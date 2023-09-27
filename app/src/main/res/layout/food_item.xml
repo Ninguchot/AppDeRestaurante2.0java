@@ -44,7 +44,7 @@
         android:id="@+id/txtFoodDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Vocês podem me indicar uma plataforma na quel fazemos o upload do aplicativo já construído ela emula em celular e vamos clicando em cima de cada ícone ela já mostra diretamente o código correspondente para modificar ?"
+        android:text="e c ícone ela já mostra diretamente o código correspondente para modificar ?"
         android:textSize="14sp"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -67,7 +67,8 @@
         android:textStyle="bold"
         android:layout_margin="20dp"
         app:layout_constraintStart_toEndOf="@+id/containerImg"
-        app:layout_constraintTop_toBottomOf="@id/txtFoodDescription">
+        app:layout_constraintTop_toBottomOf="@id/txtFoodDescription"
+        app:layout_constraintEnd_toEndOf="parent">
     </TextView>
 
     <Button
@@ -81,8 +82,8 @@
         android:backgroundTint="@color/red"
         android:layout_margin="10dp"
         app:layout_constraintStart_toEndOf="@+id/txtPrice"
-        app:layout_constraintEnd_toTopOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtFoodDescription">
+        app:layout_constraintTop_toBottomOf="@id/txtFoodDescription"
+        app:layout_constraintEnd_toEndOf="parent">
     </Button>
     
     <View
