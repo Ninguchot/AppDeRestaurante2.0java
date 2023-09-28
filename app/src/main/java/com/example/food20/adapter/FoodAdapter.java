@@ -1,17 +1,33 @@
 package com.example.food20.adapter;
 
-import android.view.View;
+import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.food20.databinding.FoodItemBinding;
+import com.example.food20.model.Food;
+
+import java.util.ArrayList;
+
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
+
+    private final Context context;
+    private final ArrayList<Food> foodList;
+
+    public FoodAdapter(Context context, ArrayList<Food> foodList) {
+        this.context = context;
+        this.foodList = foodList;
+    }
 
     @NonNull
     @Override
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return null;
+        FoodItemBinding listItem;
+        listItem = FoodItemBinding.inflate(LayoutInflater.from(context),parent,false);
+        return new FoodViewHolder(listItem);
     }
 
     @Override
@@ -25,8 +41,11 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     }
 
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
-        public FoodViewHolder(@NonNull View itemView) {
-            super(itemView);
+
+        FoodItemBinding binding;
+        public FoodViewHolder(FoodItemBinding) {
+            super(binding.getRoot());
+            this.binding = binding;
         }
     }
 
