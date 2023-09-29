@@ -32,18 +32,21 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-
+        holder.binding.imgFood.setBackgroundResource(foodList.get(position).getImgFood());
+        holder.binding.txtFoodName.setText(foodList.get(position).getFoodName());
+        holder.binding.txtFoodDescription.setText(foodList.get(position).getFoodDescription());
+        holder.binding.txtPrice.setText(foodList.get(position).getPrice());
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return foodList.size();
     }
 
     public static class FoodViewHolder extends RecyclerView.ViewHolder {
 
         FoodItemBinding binding;
-        public FoodViewHolder(FoodItemBinding) {
+        public FoodViewHolder(FoodItemBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
         }
